@@ -17,11 +17,20 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+/**
+ * Rest API contoller functions. Exposes 2 endpoints
+ * GetAll - A GET endpoint that Returns a JSON list of all data entries
+ * Add- A POST endpoint that adds the entry to the database if valid
+ */
 @RestController
 public class CreditCardInfoController
 {
     private static final Logger log = LoggerFactory.getLogger(CreditCardInfoController.class);
 
+    /**
+     * Endpoint that returns every item currently stored in the DB
+     * @return list of CreditCard info
+     */
     @GetMapping("/CardInfo/GetAll")
     List<CreditCardInfo> GetAll() {
 
@@ -32,6 +41,11 @@ public class CreditCardInfoController
         return entries;
     }
 
+    /**
+     * Adds new info to DB
+     * @param newInfo Credit card info with name, number and limit to add to DB. Validation checks will determine is valid
+     * @return response from adding to DB. 200 is card is valid, 400 if not valid
+     */
     @PostMapping(path = "/CardInfo/Add",
             consumes = "application/json",
             produces = "application/json")

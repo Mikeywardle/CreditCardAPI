@@ -2,6 +2,13 @@ package com.PublicSpaientInterview.CreditCardAPI.Verification;
 
 public class CardNumberVerification
 {
+    /**
+     * Simple Luhn10 checksum implementation to check the validity of the card number
+     * Algorithm will sum up all the digits, however every other digit will be doubled and
+     * if that result is greater than 10 it will sum it's individual digits. The result is if the sum is divisible by 10
+     * @param cardNumber to be validated
+     * @return is valid number
+     */
     public static boolean Luhn10Verify(String cardNumber)
     {
         //Check sum to be verified

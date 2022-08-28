@@ -6,6 +6,9 @@ import com.google.gson.GsonBuilder;
 import lombok.Builder;
 import lombok.Getter;
 
+/**
+ * Simple POJO object to store the result of the Card info validation. Properties are read only
+ */
 @Getter
 @Builder
 public class NewCardValidationResult

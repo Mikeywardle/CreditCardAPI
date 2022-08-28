@@ -25,7 +25,7 @@ public class NewCreditCardEntryValidatorTests
         CreditCardInfo info = CreditCardInfo.builder()
                 .name(name)
                 .cardNumber(cardNumber)
-                .limit(limit)
+                .cardLimit(limit)
                 .build();
 
         NewCreditCardEntryValidator validator = new NewCreditCardEntryValidator();

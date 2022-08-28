@@ -4,6 +4,12 @@ import com.PublicSpaientInterview.CreditCardAPI.Data.CreditCardInfo;
 
 import java.util.regex.*;
 
+/**
+ * Class to Validate a new Card entry, will test numbe ris numeric, less that 19 digits and is Luh10 compliant
+ * Will test name is all alphabetical characters
+ * Will test limit is greater than 0
+ * Returns a NewCardValidationResult
+ */
 public class NewCreditCardEntryValidator
 {
     private static final String nameVerificationRegex = "^[a-z A-Z]*$";
@@ -30,7 +36,7 @@ public class NewCreditCardEntryValidator
                     .message(invalidCardNumberMessage)
                     .build();
         }
-        else if (!IsLimitValid(creditCardInfo.getLimit()))
+        else if (!IsLimitValid(creditCardInfo.getCardLimit()))
         {
             return NewCardValidationResult.builder()
                     .success(false)

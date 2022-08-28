@@ -53,7 +53,7 @@ class App extends React.Component{
              body: JSON.stringify({
                  name: newName,
                  cardNumber: newNumber,
-                 limit: newLimit
+                 cardLimit: newLimit
             }),
       headers: {
          'Content-type': 'application/json; charset=UTF-8',
@@ -143,7 +143,7 @@ class App extends React.Component{
                     	    <td>{item.name}</td>
                     	    <td>{item.cardNumber}</td>
                     	    <td>{item.balance}</td>
-                    	    <td>{item.limit}</td>
+                    	    <td>{item.cardLimit}</td>
                         </tr>
                    ))};
                    </table>
