@@ -1,0 +1,70 @@
+
+#Detailstable {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#Detailstable td, #Detailstable th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#Detailstable tr:nth-child(even){background-color: #f2f2f2;}
+
+#Detailstable tr:hover {background-color: #ddd;}
+
+#Detailstable th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #fe414d;
+  color: white;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #fe414d;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: 2px solid #fe414d;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: white;
+  color: #fe414d;
+}
+
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=number], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+form
+{
+    width: 50%;
+    display: inline-block;
+}
+
+#errorMessage
+{
+    color: red;
+}

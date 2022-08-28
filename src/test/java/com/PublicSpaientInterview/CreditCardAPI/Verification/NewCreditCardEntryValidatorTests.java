@@ -12,18 +12,20 @@ public class NewCreditCardEntryValidatorTests
     @ParameterizedTest
     @CsvSource(
             {
-                    "Test man,1758928591,true,"
-                    ,",1758928591,false,Invalid Name"
-                    ,"Test man2,1758928591,false,Invalid Name"
-                    ,"Test man,,false,Invalid Card Number"
-                    ,"Test man,2758928591,false,Invalid Card Number"
-                    ,"Test man,123456789012345678901234567890,false,Invalid Card Number"
+                    "Test man,1758928591,1000,true,"
+                    ,",1758928591,1000,false,Invalid Name"
+                    ,"Test man2,1758928591,1000,false,Invalid Name"
+                    ,"Test man,,1000,false,Invalid Card Number"
+                    ,"Test man,2758928591,1000,false,Invalid Card Number"
+                    ,"Test man,123456789012345678901234567890,1000,false,Invalid Card Number"
+                    ,"Test man,1758928591,-1000,false,Limit must be greater than 0"
             })
-    void TestNewEntryValidation(String name, String cardNumber, boolean expectedResult, String expectedMessage)
+    void TestNewEntryValidation(String name, String cardNumber, double limit, boolean expectedResult, String expectedMessage)
     {
         CreditCardInfo info = CreditCardInfo.builder()
                 .name(name)
                 .cardNumber(cardNumber)
+                .limit(limit)
                 .build();
 
         NewCreditCardEntryValidator validator = new NewCreditCardEntryValidator();

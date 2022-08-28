@@ -12,6 +12,7 @@ public class NewCreditCardEntryValidator
 
     private static final String invalidNameMessage = "Invalid Name";
     private static final String invalidCardNumberMessage = "Invalid Card Number";
+    private static final String invalidLimitMessage = "Limit must be greater than 0";
 
     public NewCardValidationResult ValidateNewEntry(CreditCardInfo creditCardInfo)
     {
@@ -27,6 +28,13 @@ public class NewCreditCardEntryValidator
             return NewCardValidationResult.builder()
                     .success(false)
                     .message(invalidCardNumberMessage)
+                    .build();
+        }
+        else if (!IsLimitValid(creditCardInfo.getLimit()))
+        {
+            return NewCardValidationResult.builder()
+                    .success(false)
+                    .message(invalidLimitMessage)
                     .build();
         }
         else
@@ -63,5 +71,10 @@ public class NewCreditCardEntryValidator
         {
             return false;
         }
+    }
+
+    private boolean IsLimitValid(double limit)
+    {
+        return limit >= 0;
     }
 }

@@ -56,7 +56,7 @@ public class CreditCardInfoController
             log.info("invalid New Entry: " + result.getMessage());
         }
 
-        return ResponseEntity.status(returnStatus).body(result.getMessage());
+        return ResponseEntity.status(returnStatus).body(result.toString());
     }
 
     @Autowired
